@@ -1,0 +1,70 @@
+//Viewing all the tables created
+mysql> SHOW TABLES;
+
+//Inserting values into table BOOKS
+mysql> INSERT INTO BOOKS VALUES (1000, 'Diary of a wimpy kid', 5,
+'available', 'Jeff Kinney', 'Penguin books’)
+mysql> INSERT INTO BOOKS VALUES (1001, 'Cosmos : A universe journey', 3,
+'available', 'Carl Sagan', 'Discovery publishers’);
+mysql> INSERT INTO BOOKS VALUES (1002, 'It ends with us', 1,
+'unavailable', 'Colleen Hoover', 'Manhattan press’);
+mysql> INSERT INTO BOOKS VALUES (1003, 'Murder on the orient express',
+7, 'available', 'Agatha Christie', 'Penguin books');
+
+//Displaying the table BOOKS
+mysql> SELECT*FROM BOOKS;
+
+//Inserting values into table BRANCH
+mysql> INSERT INTO BRANCH VALUES (1, 991, 'Laxmi Nagar Road No. 2, Jail
+road, Ghaziabaad', 987654321);
+mysql> INSERT INTO BRANCH VALUES (2, 992, 'F4-256, Hudson Lane, Guru
+tegh bahadur nagar', 923147865);
+mysql> INSERT INTO BRANCH VALUES (3, 993, 'B3-33, Shree krishna enclave,
+rohini sector-17', 983544891);
+
+//Displaying the table BRANCH
+mysql> SELECT*FROM BRANCH;
+
+//Inserting values into table EMPLOYEE
+mysql> INSERT INTO EMPLOYEE VALUES (991, 'Aditya Goyal', 'Manager',
+30000);
+mysql> INSERT INTO EMPLOYEE VALUES (992, 'Ayushya Prasoon', 'Worker',
+10000);
+mysql> INSERT INTO EMPLOYEE VALUES (993, 'Harsh Tiwari', 'Worker',
+10000);
+mysql> INSERT INTO EMPLOYEE VALUES (994, 'Divyansh Sinha', 'Reader',
+20000);
+mysql> INSERT INTO EMPLOYEE VALUES (995, 'Divyansh Bansal', 'Assist',
+20000);
+
+//Displaying the table EMPLOYEE
+mysql> SELECT*FROM EMPLOYEE;
+
+//Inserting values into table CUSTOMER
+mysql> INSERT INTO CUSTOMER VALUES (11, 'Ishank Dabas', 'F-256, Axis
+bank, Shadhara, New Delhi', ‘2023-08-31');
+mysql> INSERT INTO CUSTOMER VALUES (12, 'Saksham Verma', 'Tagore boys
+hostel, Ber sarai', ‘2023-09-01');
+mysql> INSERT INTO CUSTOMER VALUES (13, 'Aditya Upadhyay', 'D-250 Fuzz
+town, Mathuranagari', ‘2023-09-30')
+mysql> INSERT INTO CUSTOMER VALUES (14, 'Rajat Raj', 'G-489 Pedanovas
+inn, Mathuranagari', ‘2023-12-29');
+
+//Displaying the table CUSTOMER
+mysql> SELECT*FROM CUSTOMER
+
+//Inserting values into table ISSUE_STATUS
+mysql> INSERT INTO ISSUE_STATUS VALUES (51, 12, 'Diary of a wimpy kid',
+‘2023-10-23’,1000);
+mysql> INSERT INTO ISSUE_STATUS VALUES (52, 14, 'Murder on the orient
+express', ‘2024-02-17',1003);
+
+//Displaying the table ISSUE_STATUS
+mysql> SELECT*FROM ISSUE_STATUS;
+
+//Inserting values into table RETURN_STATUS
+mysql> INSERT INTO RETURN_STATUS VALUES (61, 12, 'Diary of a wimpy kid',
+‘2023-11-14',1000);
+
+//Displaying the table RETURN_STATUS
+mysql> SELECT*FROM RETURN_STATUS;
