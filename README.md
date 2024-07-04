@@ -1,4 +1,4 @@
-<img width="524" alt="Screenshot 2024-07-04 at 11 00 11 PM" src="https://github.com/Divyanshu-sinha/Library-management-system/assets/99593438/25c13503-2349-49f0-9306-e8495923846d"># Library-management-system
+#Library-management-system
 Here is a library management system using basic concepts of DBMS, created using MySQL.
 
 A library is a collection of organised information and resources which is made accessible to
@@ -26,6 +26,8 @@ We will be needing the following main entities in this system :
 4. Customer
 5. Issue status
 6. Return status
+
+Here is a pictorial representation of the database via ER - Diagram.
 
 <img width="524" alt="Screenshot 2024-07-04 at 11 00 11 PM" src="https://github.com/Divyanshu-sinha/Library-management-system/assets/99593438/7ece57e6-0c4f-4d98-b631-2ee58afa790a">
 
