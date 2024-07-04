@@ -1,0 +1,74 @@
+1. Display the books available in the library.
+
+mysql> SELECT ISBN, Book_name
+FROM BOOKS
+WHERE Status = 'available';
+
+
+2. Display the name of all the customers who have issued a book.
+
+mysql> SELECT CUSTOMER.Customer_name
+-> FROM CUSTOMER INNER JOIN ISSUE_STATUS
+-> ON CUSTOMER.Customer_id = ISSUE_STATUS.Issued_cust;
+
+
+3. Display the name of the employee who manages the branch with branch address is
+‘Laxmi Nagar Road No. 2, Jail road, Ghaziabaad’. Display his salary & Manager id.
+
+mysql> SELECT EMPLOYEE.Employ_name, BRANCH.Manager_id,
+EMPLOYEE.Salary
+-> FROM EMPLOYEE INNER JOIN BRANCH
+-> ON EMPLOYEE.Employ_id = BRANCH.Manager_id
+-> WHERE BRANCH.Branch_address = 'Laxmi Nagar Road No. 2, Jail road,
+Ghaziabaad';
+
+
+4. Display the Issue date and return date of the book ‘The diary of a wimpy kid’.
+
+mysql> SELECT ISSUE_STATUS.Issue_date, RETURN_STATUS.Return_date
+-> FROM ISSUE_STATUS INNER JOIN RETURN_STATUS
+-> ON ISSUE_STATUS.Issued_book_name = 'Diary of a wimpy kid';
+
+
+5. Display the Inner join of EMPLOYEE and BRANCH table.
+
+mysql> SELECT*
+-> FROM EMPLOYEE INNER JOIN BRANCH
+-> ON EMPLOYEE.Employ_id = BRANCH.Manager_id;
+
+
+6. Display the Cross join of EMPLOYEE and BRANCH table.
+
+mysql> SELECT*FROM EMPLOYEE INNER JOIN BRANCH;
+
+
+7. Calculate the average salary of the employees.
+
+mysql> SELECT AVG(Salary)
+-> AS AvgSal
+-> FROM EMPLOYEE;
+
+
+8. Count the number of books in the library.
+
+mysql> SELECT COUNT(*)
+-> AS Num_of_books
+-> FROM BOOKS;
+
+
+9. Display the name of all the books and their authors.
+
+mysql> SELECT BOOKS.Book_name, BOOKS.Author
+-> FROM BOOKS;
+
+
+10. Display all the details of the book(s) which is/are unavailable.
+
+mysql> SELECT*
+-> FROM BOOKS
+-> WHERE Status = ‘unavailable';
+
+
+11. Display the average salary of each position of the employees.
+
+mysql> SELECT Position, AVG(Salary) FROM EMPLOYEE GROUP BY Position;
