@@ -1,0 +1,62 @@
+//Creation of a new database.
+mysql> CREATE DATABASE Librarymngsys;
+
+//Viewing all the databases.
+mysql> SHOW DATABASES;
+
+//Bringing the created database in use.
+mysql> USE Librarymngsys;
+
+//Creation of the table BOOKS
+mysql> CREATE TABLE BOOKS (ISBN INT(100) NOT NULL, Book_name VARCHAR(50)
+NOT NULL, Rental_price INT(10) NOT NULL, Status VARCHAR(50), Author
+VARCHAR(50) NOT NULL, Publisher VARCHAR(50) NOT NULL, PRIMARY
+KEY (ISBN));
+
+//Describing the table BOOKS
+mysql> DESCRIBE BOOKS;
+
+//Creation of the table BRANCH
+mysql> CREATE TABLE BRANCH (Branch_no INT(10) NOT NULL, Manager_id
+INT(10) NOT NULL, Branch_address VARCHAR(100) NOT NULL, Contact_no
+INT(10) NOT NULL, PRIMARY KEY (Branch_no));
+
+//Describing the table BRANCH
+mysql> DESCRIBE BRANCH;
+
+//Creation of the table EMPLOYEE
+mysql> CREATE TABLE EMPLOYEE (Employ_id INT(10) NOT NULL, Employ_name
+VARCHAR(50) NOT NULL, Position VARCHAR(30) NOT NULL, Salary INT(10) NOT
+NULL, PRIMARY KEY (Employ_id));
+
+//Describing the table EMPLOYEE
+mysql> DESCRIBE EMPLOYEE;
+
+//Creation of the table CUSTOMER
+mysql> CREATE TABLE CUSTOMER (Customer_id INT(10) NOT NULL,
+Customer_name VARCHAR(50) NOT NULL, Customer_address VARCHAR(100),
+Registeration_date DATE NOT NULL, PRIMARY KEY (Customer_id));
+
+//Describing the table CUSTOMER
+mysql> DESCRIBE CUSTOMER;
+
+//Creation of the table ISSUE_STATUS
+mysql> CREATE TABLE ISSUE_STATUS (Issue_id INT(10) NOT NULL, Issued_cust
+INT(10) NOT NULL, Issued_book_name VARCHAR(50) NOT NULL, Issue_date DATE
+NOT NULL, ISBN_book INT(10) NOT NULL, PRIMARY KEY (Issue_id), CONSTRAINT
+FOREIGN KEY(ISBN_book) REFERENCES BOOKS(ISBN), CONSTRAINT FOREIGN KEY
+(ISBN_book) REFERENCES BOOKS(ISBN), CONSTRAINT FOREIGN KEY
+(Issued_cust) REFERENCES CUSTOMER(Customer_id));
+
+//Describing the table ISSUE_STATUS
+mysql> DESCRIBE ISSUE_STATUS;
+
+//Creation of the table RETURN_STATUS
+mysql> CREATE TABLE RETURN_STATUS (Return_id INT(10) NOT NULL,
+Return_cust INT(10) NOT NULL, Returned_book_name VARCHAR(50) NOT NULL,
+Return_date DATE NOT NULL, ISBN_book2 INT(10) NOT NULL, PRIMARY KEY
+(Return_id), CONSTRAINT FOREIGN KEY(ISBN_book2) REFERENCES BOOKS(ISBN),
+CONSTRAINT FOREIGN KEY(Return_cust) REFERENCES
+ISSUE_STATUS(Issued_cust));
+//Describing the table RETURN_STATUS
+mysql> DESCRIBE RETURN_STATUS;
